@@ -1,6 +1,6 @@
 const userStore =
 {
-	namespaced: true, // делает модолу более разделенными независимыми без глобальной области видимости
+	namespaced: true, // делает модоль более разделенными независимыми без глобальной области видимости
 	state:
 	{
 		list:
@@ -21,7 +21,7 @@ const userStore =
 		//users: ({list}) => Object.values(list),//деструктуризация 1способ
 		user(state)
 		{
-			return state.list;
+			return Object.values(state.list);
 		}
 	}
 }

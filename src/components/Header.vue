@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>{{ msg }}</h1>
-		<p v-for="item in users" :key="item.id">
+		<p v-for="item in user" :key="item.id">
 			{{ item.name }}: {{ item.age}}
 		</p>
 	</div>
@@ -17,7 +17,7 @@
 		},
 		computed:
 		{
-			...mapGetters('user', ['user'])//1 это название стора ,второе название
+			...mapGetters('user', ['user'])//1 это название стора ,второе название геттера
 		}
 	}
 </script>
