@@ -5,12 +5,16 @@
 			v-for="item in user"
 			:key="item.id"
 		>
-			{{ capitalize }}
+			{{ capitalize }} : {{ item.age }}
 		</div>
+		<button @click="addUser">ADD User</button>
 	</div>
 </template>
 
 <script>
+
+import {mapActions} from 'vuex';
+
 export default {
 	name: "HelloWorld",
 	data() {
@@ -24,6 +28,16 @@ export default {
 	},
 	methods:
 	{
+		...mapActions("user", ['addNewUser']),
+		addUser()
+		{
+			const newUser =
+			{
+				name: 'Ivan',
+				age: 30
+			};
+			this.addNewUser(newUser);
+		}
 	},
 	computed:
 	{
